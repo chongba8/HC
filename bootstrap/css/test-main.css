@@ -1,0 +1,302 @@
+/*
+* @Author: Administrator
+* @Date:   2017-01-30 18:37:04
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-04-12 21:50:43
+*/
+/* 字体图标样式 */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot');
+  src:  url('../fonts/icomoon.eot?bzxkvk#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?bzxkvk') format('truetype'),
+    url('../fonts/icomoon.woff?bzxkvk') format('woff'),
+    url('../fonts/icomoon.svg?bzxkvk#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+ font-size: 20px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-music:before {
+  content: "\e911";
+
+}
+.icon-film:before {
+  content: "\e913";
+}
+.icon-dice:before {
+  content: "\e915";
+}
+.icon-mic:before {
+  content: "\e91e";
+}
+.icon-spinner9:before {
+  content: "\e982";
+  color: red;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  animation: spinner 2s infinite linear;
+  
+}
+/* 旋转图标动画 */
+@-webkit-keyframes spinner{
+	0%{transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);}
+	100%{transform: rotate(359deg);
+	-webkit-transform: rotate(359deg);}
+}
+.icon-mug:before {
+  content: "\e9a2";
+}
+.icon-airplane:before {
+  content: "\e9af";
+}
+
+/* 公共样式 */
+*{margin: 0;padding: 0;}
+body{margin: 0;padding:0;padding-top: 50px;width: 100%;}
+a:hover{
+	text-decoration: none;
+}
+  .topbar{
+            height: 40px;
+            border-bottom: 1px solid #c0c0c0;
+            line-height: 40px;
+    }
+  .row div{
+    			height: 40px;
+    }
+   .row>div+div{
+   					border-left:1px solid #c0c0c0 ;
+   } 
+   .tb1 a{
+   	position: relative;
+   
+   }
+   
+.tb1 a:hover{
+			text-decoration: none;	
+}
+.tb1 a img{
+	display: none;
+}
+.tb1:hover a img{
+	display: block;
+	position: absolute;
+	left: 0;
+}
+
+#my-navbrand{
+	padding-top: 0;
+}
+#bs-example-navbar-collapse-1 li:hover{
+	border-bottom: 2px solid red;
+}
+#bs-example-navbar-collapse-1 li{
+	border-bottom: 2px solid transparent;
+}
+#bs-example-navbar-collapse-1 li{
+	font-weight: bold;
+}
+
+#product{
+	padding-top: 50px;
+}
+#product div{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#carousel-example-generic .carousel-inner div img{
+	width: 100%;
+}
+
+#my-navbar{
+	margin-bottom: 0;
+}
+#send{
+	height: 50px;
+	padding-top: 15px;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+}
+#send p{
+	float: left;
+	margin-left: 20px;
+}
+#send p:nth-of-type(3){
+	float: right;
+}
+.senda{
+	padding-left: 10px;
+	color: red !important;
+}
+#my_table{
+	background-color: #f0f0f0;
+    padding: 40px 0;
+
+}
+#my_table li:last-child{
+	float: right;
+}
+#my_table a{
+	color: #000;
+	font-weight:550;
+}
+#my_table.active{
+	background-color:;
+}
+#my_table .nav-tabs > li.active > a {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 4px solid #e92322;
+}
+.panel-czbk.actived::before {
+    content: "\e915";
+    font-family: itcast;
+    font-size: 50px;
+    position: absolute;
+    top: -11px;
+    left: 15px;
+}
+.money{
+	height: 150px;
+	background-color: #e92322;
+	position: relative;
+}
+.row div{
+	height: 150px;
+}
+.tab-content{
+	
+}
+.money div:nth-of-type(1){
+	width: 70%;
+	border-right: 1px dashed #aaa;
+	float: left;
+	
+}
+.money div:nth-of-type(2){
+		position: relative;
+		float: right;
+		width: 30%;
+}
+.money div:nth-of-type(2)::before{
+	content:"";
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background-color: #f0f0f0;
+	position: absolute;
+	left: -8px;
+	top: -8px;
+}
+.money div:nth-of-type(2)::after{
+	content:"";
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background-color: #f0f0f0;
+	position: absolute;
+	left: -8px;
+	bottom: -8px;
+	box-shadow: 0px 2px 1px #aaa inset;
+}
+@media(max-width: 500px){  
+#my_table .ul-wrap{
+	overflow-x: scroll;
+	
+}
+#my_table .nav{
+	width: 650px;
+}
+}
+
+::-webkit-scrollbar 
+{
+	height: 0;
+}
+
+.girl{width: 75%;}
+.carouselbox{height: 350px;}
+.carousel-inner .item img{display: block;height: 350px;}
+.brandlog {
+  background: url('../img/brandlog.png') no-repeat 0 10px;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+	.carouselbox{height: 300px;}
+	.carousel-inner .item img{height: 300px;}
+}
+@media screen and (max-width: 500px) {
+	.carouselbox{height: 250px;}
+	.carousel-inner .item img{height: 250px;}
+}
+@media screen and (max-width: 350px) {
+	.carouselbox{height: 200px;}
+	.carousel-inner .item img{height: 200px;}
+}
+.media-body img{
+	width: 100%;
+	height: 400px;
+}
+.happy{
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+	width: 80%;
+	position: relative;
+}
+.more{position: absolute;
+	top: 0;
+	right: 20px;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	width: 30px;
+	height: 14px;
+}
+/* nav字体图标设置 */
+.nav-tabs li {
+	padding-right: 10px;
+}
+.ul-wrap{background-color:#c0c0c0;}
+.tab-pane{height: 300px;padding: 20px 20px;}
+#tb1{background-color:gold;}
+#tb2{background-color:orange;}
+#tb3{background-color:yellowgreen;}
+#tb4{background-color:skyblue;}
+#tb5{background-color:#11ffaa;}
+    /* /公共样式 
+
+    /* 字体图标 */
+
+
+
+
+
+
+
+
+
+
+    /* /字体图标 */
+   

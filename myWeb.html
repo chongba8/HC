@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta keyword="">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="boolmark" href="favicon.ico">
+<title>myweb-fullpage</title>
+<style>
+a{text-decoration: none;}
+ #fullpage{padding-top: 60px;} 
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff; position: relative;}
+.header {position: fixed;top: 0; left: 0;width: 100%;height: 60px;background: rgba(0, 0, 0, 0.6);z-index: 1000;}
+#menu { margin: 0; padding: 0;width: 70px; float:right; margin-right: 20px;}
+#menu a { color: #fff; text-decoration: none; display: block; height: 20px; line-height: 20px;} 
+#menu .active a { color: #fff; background-color: #333;text-align: center;}
+.product li { font-size: 14px; list-style-type: none; height: 20px;font-weight: 200;}
+.product { display: none;position: absolute; top: 60px; left: -10px; width: 70px; line-height: 20px;background: rgba(0, 0, 0, 0.6); padding: 0; margin: 0; text-align: center;}
+.productbox{position: relative; width: 70px;height: 60px;line-height: 60px; cursor: pointer;color:#fff; font-family: "微软雅黑";font-weight: 200;}
+.productbox:hover ul{display: block; }
+.productbox:hover{color:red;font-weight: bold;}
+.myinterview{width: 160px;height: 60px; float: left;cursor: pointer;}
+.myinterview span:nth-of-type(1){display: block; width: 50px;height: 60px;background: url('imgs/touxiang.jpg') no-repeat 0 0; -webkit-background-size: 50px 50px;
+background-size: 50px 50px; margin-left: 20px; margin-top: 5px;}
+.myinterview span:nth-of-type(2){border-bottom: 1px solid #fff;}
+.myinterview span{float: left; display: block; text-align: center; color:#fff; font-family: "微软雅黑";font-weight: 300;}
+.myinterview>span+span{width: 70px;height: 30px;margin-left: 20px; line-height: 30px; font-size: 14px;}
+.contact{width: 110px;height: 60px;float:left;cursor: pointer;margin-left: 20px;}
+.contact span{display: block;font-size:12px;width: 130px; height: 30px;line-height: 30px;padding-left: 18px; color:#fff; font-family: "微软雅黑";font-weight: 200;}
+.contact span:nth-of-type(1){background: url('imgs/phone.fw.png') no-repeat top 8px left 0; -webkit-background-size: 14px 14px;
+background-size: 14px 14px;}
+.contact span:nth-of-type(2){background: url('imgs/email.fw.png') no-repeat top 8px left 0; -webkit-background-size: 14px 14px;
+background-size: 14px 14px;}
+.section h3{margin-left: 5%;font-size: 30px;padding:0 5px;line-height: 60px;height: 60px; position: absolute; top: 40px; left: 0;border-radius: 10px;cursor: pointer;z-index: 1000;}
+.section h3 a{display: block;height: 60px;line-height: 60px;cursor: pointer;float: left;}
+.section h3:active{background:#cc1100;}
+.over{background:#cc1100;}
+.commmon{/* margin: 60px auto ;width: 500px;height: 500px; */ position: absolute; top: 50%;left: 50%;-webkit-transform:translate(-50%,-45%)}
+.section1{background: url('imgs/bg3.jpg') no-repeat center center;-webkit-background-size:cover;
+background-size:cover;}
+.section2{background: url('imgs/bg2.jpg') no-repeat center center;-webkit-background-size:cover;
+background-size:cover;}
+.section3{background: url('imgs/bg4.jpg') no-repeat center center;-webkit-background-size:cover;
+background-size:cover;}
+.section4{background: url('imgs/bg1.jpg') no-repeat center center;-webkit-background-size:cover;
+background-size:cover;}
+@media screen and (max-width: 640px) {
+    .myinterview span:nth-of-type(1){margin-left: 0;}
+	#menu {margin-right: 0;}
+	.contact{margin-left: 5px;}
+	.myinterview{width: 150px;}
+	.section h3{margin-left: 1%;top: 30px;}
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/move.js/0.2.0/move.js"></script>
+<script src="canvas/js/universe.js"></script>
+<script src="canvas/js/konva.min.js"></script>
+<script>
+$(function(){
+	$('#fullpage').fullpage({
+		anchors: ['page1', 'page2', 'page3', 'page4'],
+		menu: '#menu',
+		scrollingSpeed: 500,
+		loopBottom:true,
+		'navigation': true,
+		afterLoad:function(Link,index){
+			switch(index){
+				case 1:
+				console.log(1);
+					
+					move('.section1 h3').scale(1.5).duration(1000).end(move('.section1 h3').scale(1).duration(1000).end());
+				break;
+				case 2:
+				console.log(1);
+				//move('.section h3').set('margin-left','20%').end();
+					move('.section2 h3').scale(1.5).duration(1000).end(move('.section2 h3').scale(1).duration(1000).end());
+				break;
+				case 3:
+				move('.section3 h3').scale(1.5).duration(1000).end(move('.section3 h3').scale(1).duration(1000).end());
+				break;
+				case 4:
+				move('.section4 h3').scale(1.5).duration(1000).end(move('.section4 h3').scale(1).duration(1000).end());
+				break;
+			}
+		},
+	});
+	
+	// $('.section h3').on('mouseover',function(){$(this).addClass('over');});
+	// $('.section h3').on('mouseout',function(){$(this).removeClass('over')});
+	// document.body.addEventListener('touchstart', function () {});
+	
+	// $('*').on('touchstart',function(e){e.stopPropagation();})
+	// $('*').on('touchsend',function(e){e.stopPropagation();})
+	
+	
+});
+</script>
+</head>
+
+<body>
+<header class="header">
+	<div class="myinterview">
+		<span></span>
+		<span>何 冲</span>
+		<span>求职作品</span>
+	</div>
+
+	<div id="menu">
+		<div class="productbox">
+			我的作品
+			<ul class="product">
+				<li data-menuanchor="page1" class="active"><a href="#page1">首 页</a></li>
+				<li data-menuanchor="page2"><a href="#page2">移动商城</a></li>
+				<li data-menuanchor="page3"><a href="#page3">BootStrap</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contact">
+		<span>17620485388</span>
+		<span>QQ2472604879</span>
+</div>
+	
+</header>
+<div id="fullpage">
+	<div class="section section1">
+		<h3><a href="#">首 页</a></h3>
+		<div id="container1" class="commmon"></div>
+	</div>
+	<div class="section section2">
+		<h3><a href="./移动商城/index.html" target="blank">移动商城</a></h3>
+		<div id="container2" class="commmon"></div>
+	</div>
+	<div class="section section3">
+		<h3><a href="bootstrap/bootstrap1.html" target="blank">BootStrap</a></h3>
+		<div id="container3" class="commmon"></div>
+	</div>
+	
+</div>
+</body>
+
+ <script>
+ document.body.addEventListener('touchstart', function(){ });
+    /*封装这个宇宙模型动画*/
+    var radius1=100,radius2=160,radius3=210;
+    var options={
+        container:'container1',
+        option0:{ x:250, y:250, text:'全屏网页',radius:50, style:'#22ffee',fontSize:18},
+        option1:{ x:radius1*Math.cos(60/180*Math.PI), y:radius1*Math.sin(60/180*Math.PI), text:'HTML', radius:25, style:'red',fontSize:14},
+        option2:{x:radius1*Math.cos(180/180*Math.PI), y:radius1*Math.sin(180/180*Math.PI), text:'css', radius:25, style:'orange',fontSize:14 },
+        option3:{x:radius1*Math.cos(300/180*Math.PI), y:radius1*Math.sin(300/180*Math.PI), text:'jquery', radius:25, style:'green',fontSize:14},
+        option4:{x:radius2*Math.cos(0/180*Math.PI), y:radius2*Math.sin(0/180*Math.PI), text:'Fullpage', radius:30, style:'#cc00aa', fontSize:12},
+        option5:{x:radius2*Math.cos(120/180*Math.PI), y:radius2*Math.sin(120/180*Math.PI), text:'move.js', radius:30, style:'#551100',fontSize:12 } ,
+        option6:{x:radius2*Math.cos(240/180*Math.PI), y:radius2*Math.sin(240/180*Math.PI), text:'Konva', radius:30, style:'#0000aa', fontSize:14},
+
+         }
+    var options1={
+        container:'container2',
+        option0:{ x:250, y:250, text:'移动商城',radius:50, style:'#22ffee',fontSize:18},
+        option1:{ x:radius1*Math.cos(60/180*Math.PI), y:radius1*Math.sin(60/180*Math.PI), text:'HTML', radius:25, style:'red',fontSize:14},
+        option2:{x:radius1*Math.cos(180/180*Math.PI), y:radius1*Math.sin(180/180*Math.PI), text:'css', radius:25, style:'orange',fontSize:14 },
+        option3:{x:radius1*Math.cos(300/180*Math.PI), y:radius1*Math.sin(300/180*Math.PI), text:'Jquery', radius:25, style:'green',fontSize:14},
+        option4:{x:radius2*Math.cos(0/180*Math.PI), y:radius2*Math.sin(0/180*Math.PI), text:'移动布局', radius:30, style:'#cc00aa', fontSize:12},
+        option5:{x:radius2*Math.cos(120/180*Math.PI), y:radius2*Math.sin(120/180*Math.PI), text:'无限轮播', radius:30, style:'#551100',fontSize:12 } ,
+        option6:{x:radius2*Math.cos(240/180*Math.PI), y:radius2*Math.sin(240/180*Math.PI), 
+        	text:'原生动画', radius:30, style:'#0000aa', fontSize:12},
+
+         }
+    var options2={
+        container:'container3',
+        option0:{ x:250, y:250, text:'移动商城',radius:50, style:'#22ffee',fontSize:18},
+        option1:{ x:radius1*Math.cos(60/180*Math.PI), y:radius1*Math.sin(60/180*Math.PI), text:'HTML', radius:25, style:'red',fontSize:14},
+        option2:{x:radius1*Math.cos(180/180*Math.PI), y:radius1*Math.sin(180/180*Math.PI), text:'css', radius:25, style:'orange',fontSize:14 },
+        option3:{x:radius1*Math.cos(300/180*Math.PI), y:radius1*Math.sin(300/180*Math.PI), text:'JS', radius:25, style:'green',fontSize:14},
+        option4:{x:radius2*Math.cos(0/180*Math.PI), y:radius2*Math.sin(0/180*Math.PI), text:'BootStrap', radius:30, style:'#cc00aa', fontSize:12},
+        option5:{x:radius2*Math.cos(120/180*Math.PI), y:radius2*Math.sin(120/180*Math.PI), text:'文字图标', radius:30, style:'#551100',fontSize:12 } ,
+        option6:{x:radius2*Math.cos(240/180*Math.PI), y:radius2*Math.sin(240/180*Math.PI), 
+        	text:'css3动画', radius:30, style:'#0000aa', fontSize:12},
+
+         }
+   
+    universe(options); 
+    universe(options1);
+    universe(options2);
+
+    	
+    </script>
+</html>
